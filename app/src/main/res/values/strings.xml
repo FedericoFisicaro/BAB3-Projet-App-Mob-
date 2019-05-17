@@ -2,9 +2,9 @@
     <string name="app_name">SmartBin</string>
     <string name="aide1"><b>Bienvenue dans Smart Bin, l\'application qui vous permet de trier vos déchets avec facilité!</b></string>
     <string name="aide2"> <u>Comment utiliser Smart Bin?</u></string>
-    <string name="aide3">Tout d\'abord, l\'écran d\'acceuil possède deux boutons : \"Trier un déchet\" et \"Les types de déchets\" \n Le premier vous envoie sur une page où vous pourrez prendre une photo du déchet que vous désirez trier.</string>
+    <string name="aide3">Tout d\'abord, l\'écran d\'accueil possède deux boutons : \"Trier un déchet\" et \"Les types de déchets\" \n Le premier vous envoie sur une page où vous pourrez prendre une photo du déchet que vous désirez trier.</string>
     <string name="aide4">Après avoir photographié le déchet, il vous suffit d\'appuyer sur \"Détecter objet\" pour que l\'algorithme reconnaisse le type de déchet présent sur l\'image et vous indique comment le trier. </string>
-    <string name="aide5">Le deuxième bouton de l\'écran d\'acceuil vous emmènera vers une liste de type de déchets. En cliquant sur l\'un d\'entre eux, une fenêtre s\'ouvrira pour vous donner de plus amples informations sur ce type de déchets.</string>
+    <string name="aide5">Le deuxième bouton de l\'écran d\'accueil vous emmènera vers une liste de type de déchets. En cliquant sur l\'un d\'entre eux, une fenêtre s\'ouvrira pour vous donner de plus amples informations sur ce type de déchets.</string>
     <string name="aide6">Bienvenue dans Smart Bin, l\'application qui vous permet de trier vos déchets avec facilité!</string>
     <string name="aide7">Bienvenue dans Smart Bin, l\'application qui vous permet de trier vos déchets avec facilité!</string>
     <string name="aide8">Bienvenue dans Smart Bin, l\'application qui vous permet de trier vos déchets avec facilité!</string>
