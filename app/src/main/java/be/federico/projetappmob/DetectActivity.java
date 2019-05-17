@@ -24,6 +24,9 @@ public class DetectActivity extends AppCompatActivity {
         detect=findViewById(R.id.BtnDetect);
         photo=findViewById(R.id.ImageView);
 
+
+        
+
         prendrePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
