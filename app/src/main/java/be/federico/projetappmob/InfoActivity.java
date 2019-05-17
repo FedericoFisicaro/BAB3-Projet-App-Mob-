@@ -26,15 +26,15 @@ public class InfoActivity extends AppCompatActivity {
         noms.add("carton");
         noms.add("PMC");
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_info,noms);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView txt=(TextView)view;
+        //final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_info,noms);
+        //lv.setAdapter(adapter);
+        //lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           // @Override
+           // public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+           //     TextView txt=(TextView)view;
                 //System.out
-            }
-        });
+          //  }
+       // });
 
     }
 }
