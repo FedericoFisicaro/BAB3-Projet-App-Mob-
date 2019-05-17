@@ -4,75 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#b5e4fa"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/TvTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="TITRE"
-        android:textAlignment="center"
-        android:textSize="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/BtnInfos"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="© MarFedHa. All Rights Reserved."
+        android:textColor="#0f0fb0"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bAide"
+        app:layout_constraintVertical_bias="0.901" />
+
+    <Button
+        android:id="@+id/bTrier"
+        android:layout_width="161dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:background="#ED7F10"
+        android:text="Trier un déchet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/bInfo"
+        android:layout_width="198dp"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:text="Infos"
+        android:background="#ED7F10"
+        android:text="Les types de déchets"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TvTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/bTrier" />
 
-
-    <com.wonderkiln.camerakit.CameraView
-        android:id="@+id/cameraView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center|top"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="303dp"
+        android:layout_height="267dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BtnInfos"
-        app:layout_constraintTop_toTopOf="TvTitle" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo5" />
 
     <Button
-        android:id="@+id/BtnToggleCamera"
+        android:id="@+id/bAide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="8dp"
-        android:text="Changer camerà"
-        android:textSize="10dp"
+        android:background="#6fcaf4"
+        android:text="Aide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cameraView" />
-
-    <Button
-        android:id="@+id/BtnDetect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="8dp"
-        android:text="Détecter objet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BtnToggleCamera" />
+        app:layout_constraintTop_toBottomOf="@+id/bInfo" />
 
 </android.support.constraint.ConstraintLayout>

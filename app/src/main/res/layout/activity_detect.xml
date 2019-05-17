@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b5e4fa"
+    tools:context=".DetectActivity">
+
+    <TextView
+        android:id="@+id/TvTitle"
+        android:layout_width="339dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+
+        android:text="Analyse de déchets"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="center"
+        android:textColor="#ED7F10"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ImageView"
+        android:layout_width="378dp"
+        android:layout_height="391dp"
+        android:layout_gravity="center|top"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvTitle"
+        app:srcCompat="@drawable/photo_analyse" />
+
+    <Button
+        android:id="@+id/BtnToggleCamera"
+        android:layout_width="175dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rectangle_plein_orange"
+        android:text="Prendre une photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImageView" />
+
+    <Button
+        android:id="@+id/BtnDetect"
+        android:layout_width="176dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rectangle_plein_orange"
+        android:text="Détecter objet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnToggleCamera" />
+
+
+</android.support.constraint.ConstraintLayout>
