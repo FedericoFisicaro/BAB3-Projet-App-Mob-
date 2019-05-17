@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class DetectActivity extends AppCompatActivity {
 
-    Button prendrePhoto;
+    Button prendrePhoto,detect;
     ImageView photo;
 
 
@@ -21,6 +21,7 @@ public class DetectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detect);
         prendrePhoto=findViewById(R.id.BtnToggleCamera);
+        detect=findViewById(R.id.BtnDetect);
         photo=findViewById(R.id.ImageView);
 
         prendrePhoto.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +29,14 @@ public class DetectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(intent,0);
+            }
+        });
+
+        detect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(DetectActivity.this,ResultActivity.class);
+                startActivity(intent);
             }
         });
     }
