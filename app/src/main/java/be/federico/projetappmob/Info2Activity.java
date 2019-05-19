@@ -40,6 +40,7 @@ public class Info2Activity extends AppCompatActivity {
 
         b=databaseAccess.getPhoto(id);
 
+        //photo.setImageBitmap(b);
         databaseAccess.close();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
