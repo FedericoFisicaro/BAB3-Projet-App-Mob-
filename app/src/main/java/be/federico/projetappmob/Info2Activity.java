@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Info2Activity extends AppCompatActivity {
 
@@ -17,6 +18,7 @@ public class Info2Activity extends AppCompatActivity {
     ImageView photo;
     int id;
     Bitmap b;
+    byte[]c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class Info2Activity extends AppCompatActivity {
         tvExplications=findViewById(R.id.tvExplications);
         tvTypeDechets=findViewById(R.id.tvTypeDechet);
         back=findViewById(R.id.bRetour);
-        photo=findViewById(R.id.ImageView);
+        photo=findViewById(R.id.iv4);
 
         final DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
@@ -38,7 +40,14 @@ public class Info2Activity extends AppCompatActivity {
         tvTypeDechets.setText(databaseAccess.getNom(id));
         tvPoubelle.setText("Va dans la poubelle "+databaseAccess.getType(id));
 
-        b=databaseAccess.getPhoto(id);
+
+        c=databaseAccess.getPhoto(id);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(c, 0, c.length);
+
+
+        photo.setImageBitmap(bitmap);
+        
+        //else  Toast.makeText(getApplicationContext(),"Erreur",Toast.LENGTH_LONG).show();
 
         databaseAccess.close();
         back.setOnClickListener(new View.OnClickListener() {
