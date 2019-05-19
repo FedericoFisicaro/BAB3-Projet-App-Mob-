@@ -77,13 +77,12 @@ public class DatabaseAccess {
         return liste;
     }
 
-    public Bitmap getPhoto(int ide){
+    public byte[] getPhoto(int ide){
 
         c=db.rawQuery("select id,photo from Dechets where id ='"+ide+"'", new String[]{});
         c.moveToFirst();
         byte[] bitmapData = c.getBlob(1);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapData, 0, bitmapData.length);
-        return bitmap;
+        return bitmapData;
     }
 
 }
