@@ -1,10 +1,13 @@
 package be.federico.projetappmob;
 
 import android.content.Context;
-import android.database.sqlite.*;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
-public class DataBase {
-}
+//public class DataBase extends SQLiteOpenHelper {
+    //public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
+
+//}
 
 
 /*
