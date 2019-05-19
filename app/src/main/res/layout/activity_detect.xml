@@ -28,12 +28,14 @@
 
     <ImageView
         android:id="@+id/ImageView"
-        android:layout_width="378dp"
-        android:layout_height="391dp"
+        android:layout_width="306dp"
+        android:layout_height="337dp"
         android:layout_gravity="center|top"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnToggleCamera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TvTitle"
@@ -44,31 +46,27 @@
         android:layout_width="175dp"
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/rectangle_plein_orange"
         android:text="Prendre une photo"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDetect"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImageView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/BtnDetect"
         android:layout_width="176dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/rectangle_plein_orange"
         android:text="Détecter objet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BtnToggleCamera"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
