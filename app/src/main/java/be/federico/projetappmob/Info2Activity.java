@@ -16,7 +16,7 @@ public class Info2Activity extends AppCompatActivity {
     TextView tvExplications,tvTypeDechets;
     Button back;
     ImageView photo;
-    int id;
+    String id;
     Bitmap b;
     byte[]c;
 
@@ -34,16 +34,16 @@ public class Info2Activity extends AppCompatActivity {
         databaseAccess.open();
 
         Intent intent=getIntent();
-        id=Integer.valueOf(intent.getStringExtra("ID"));
-        tvExplications.setText(databaseAccess.getExplication(id));
-        tvTypeDechets.setText(databaseAccess.getType(id));
+        id=intent.getStringExtra("ID");
+        //tvExplications.setText(databaseAccess.getExplication(id));
+        //tvTypeDechets.setText(databaseAccess.getType(id));
 
 
-        c=databaseAccess.getPhoto(id);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(c, 0, c.length);
+        //c=databaseAccess.getPhoto(id);
+        // Bitmap bitmap = BitmapFactory.decodeByteArray(c, 0, c.length);
 
 
-        photo.setImageBitmap(bitmap);
+        //photo.setImageBitmap(bitmap);
         
         //else  Toast.makeText(getApplicationContext(),"Erreur",Toast.LENGTH_LONG).show();
 

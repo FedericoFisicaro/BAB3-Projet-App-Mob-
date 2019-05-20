@@ -55,15 +55,11 @@ public class DatabaseAccess {
 
     public ArrayList<String> getTypes(){
 
-        c=db.rawQuery("select id,type from Dechets", new String[]{});
+        c=db.rawQuery("select type from Poubelle", new String[]{});
         ArrayList<String> liste=new ArrayList<String>();
-
-
         while(c.moveToNext()){
-            StringBuffer buffer= new StringBuffer();
-            String nom = c.getString(1);
-            buffer.append(c.getInt(0)+") " +nom);
-            liste.add(buffer.toString());
+            String nom = c.getString(0);
+            liste.add(nom);
         }
         return liste;
     }

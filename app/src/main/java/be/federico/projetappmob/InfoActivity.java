@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -41,7 +42,6 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
         lv=findViewById(R.id.lvPapier);
-
         final DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
 
@@ -58,7 +58,7 @@ public class InfoActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView txt=(TextView) view;
                 Intent intent=new Intent(InfoActivity.this,Info2Activity.class);
-                intent.putExtra("ID",String.valueOf(position+1));
+                intent.putExtra("ID",txt.toString());
                 startActivity(intent);
             }
         });
