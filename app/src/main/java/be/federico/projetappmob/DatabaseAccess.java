@@ -118,7 +118,9 @@ public class DatabaseAccess {
     }
 
     public boolean Verification(String nom){
-        if(db.rawQuery("select nom from Dechets where nom ='"+nom+"'", new String[]{})!=null)return true;
+        c=db.rawQuery("select nom from Dechets where nom ='"+nom+"'", new String[]{});
+        c.moveToFirst();
+        if(c.getCount()!=0)return true;
         else return false;
     }
 
