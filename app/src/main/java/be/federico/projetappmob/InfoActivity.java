@@ -40,7 +40,7 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        lv=findViewById(R.id.listView);
+        lv=findViewById(R.id.lvPapier);
 
         final DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
