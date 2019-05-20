@@ -26,6 +26,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //api 'com.wonderkiln:camerakit:0.13.1'
+    api 'org.tensorflow:tensorflow-lite:+'
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     api 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     annotationProcessor 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
