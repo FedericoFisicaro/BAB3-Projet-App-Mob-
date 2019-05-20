@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -21,6 +23,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -129,7 +132,10 @@ public class DetectActivity extends AppCompatActivity {
         try {
             inputStream = getContentResolver().openInputStream(pictureUri);
             Bitmap image = BitmapFactory.decodeStream(inputStream);
-            photo.setImageBitmap(image);
+
+            Bitmap imagerotate = imageOreintationValidator(image,pictureUri.getPath());
+
+            photo.setImageBitmap(imagerotate);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -138,5 +144,45 @@ public class DetectActivity extends AppCompatActivity {
         //Bitmap bitmap=(Bitmap)data.getExtras().get("data");
         //photo.setImageBitmap(bitmap);
 
+    }
+
+
+    private Bitmap imageOreintationValidator(Bitmap bitmap, String path) {
+
+        ExifInterface ei;
+        try {
+            ei = new ExifInterface(path);
+            int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION,
+                    ExifInterface.ORIENTATION_NORMAL);
+            switch (orientation) {
+                case ExifInterface.ORIENTATION_ROTATE_90:
+                    bitmap = rotateImage(bitmap, 90);
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_180:
+                    bitmap = rotateImage(bitmap, 180);
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_270:
+                    bitmap = rotateImage(bitmap, 270);
+                    break;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return bitmap;
+    }
+
+    private Bitmap rotateImage(Bitmap source, float angle) {
+
+        Bitmap bitmap = null;
+        Matrix matrix = new Matrix();
+        matrix.postRotate(angle);
+        try {
+            bitmap = Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
+                    matrix, true);
+        } catch (OutOfMemoryError err) {
+            err.printStackTrace();
+        }
+        return bitmap;
     }
 }
