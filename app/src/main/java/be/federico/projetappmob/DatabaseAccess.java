@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import java.io.ByteArrayOutputStream;
+import java.sql.Blob;
 import java.util.ArrayList;
 
 public class DatabaseAccess {
@@ -67,12 +68,9 @@ public class DatabaseAccess {
 
 
 
+    public String getExplication(String Type){
 
-
-
-    public String getExplication(int ide){
-
-        c=db.rawQuery("select id,informations from Dechets where id ='"+ide+"'", new String[]{});
+        c=db.rawQuery("select type,informations from Poubelle where type ='"+Type+"'", new String[]{});
         c.moveToFirst();
         String liste=c.getString(1);
         return liste;
@@ -86,20 +84,36 @@ public class DatabaseAccess {
         return liste;
     }
 
-    public String getType(int ide){
+    public String getType(String Type){
 
-        c=db.rawQuery("select id,type from Dechets where id ='"+ide+"'", new String[]{});
+        c=db.rawQuery("select type from Poubelle where type ='"+Type+"'", new String[]{});
         c.moveToFirst();
         String liste=c.getString(1);
         return liste;
     }
 
-    public byte[] getPhoto(int ide){
+    public byte[] getPhoto(String Type){
 
-        c=db.rawQuery("select id,photo from Dechets where id ='"+ide+"'", new String[]{});
+        c=db.rawQuery("select type,photo from Poubelle where type ='"+Type+"'", new String[]{});
         c.moveToFirst();
         byte[] bitmapData = c.getBlob(1);
         return bitmapData;
     }
+
+    public void Ajout(String Nom, String Type){
+
+        db.execSQL("INSERT INTO Dechets (nom, type) "+ "VALUES ('"+Nom+"','"+Type+"')", new String[]{});
+
+    }
+
+    public void Suppression(String Nom){
+
+        db.execSQL("delete from Dechets where nom ='"+Nom+"'", new String[]{} );
+    }
+
+    public void Modif(String set, String element, String Nom){
+        db.execSQL("update Dechets set "+set+" = '"+element+"' where nom = '"+Nom+"' ",new  String []{});;
+    }
+
 
 }
