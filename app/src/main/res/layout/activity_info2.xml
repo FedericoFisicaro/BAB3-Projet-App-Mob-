@@ -9,9 +9,10 @@
 
 
     <ScrollView
-
+        android:id="@+id/sv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="12dp"
                 android:background="@drawable/rectangle_plein_bleu"
                 android:gravity="center"
@@ -61,14 +62,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="28dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/rectangle_plein_orange"
                 android:text="Retour"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="@id/cl"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/cl"
                 app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="@id/cl" />
+                app:layout_constraintStart_toStartOf="@id/cl"
+                app:layout_constraintTop_toBottomOf="@+id/bDelete" />
 
             <ImageView
                 android:id="@+id/iv4"
@@ -82,6 +86,46 @@
                 app:layout_constraintStart_toStartOf="@id/cl"
                 app:layout_constraintTop_toBottomOf="@+id/tvTypeDechet"
                 app:srcCompat="@drawable/analyse_photo" />
+
+            <TextView
+                android:id="@+id/tvExemple"
+                android:layout_width="394dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Exemple : "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvExplications" />
+
+            <Button
+                android:id="@+id/bAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rectangle_plein_orange"
+                android:text="Ajouter \nun exemple"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.12"
+                app:layout_constraintStart_toStartOf="@id/cl"
+                app:layout_constraintTop_toBottomOf="@+id/tvExemple" />
+
+            <Button
+                android:id="@+id/bDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rectangle_plein_orange"
+                android:text="Supprimer \nun exemple"
+                app:layout_constraintEnd_toEndOf="@id/cl"
+                app:layout_constraintHorizontal_bias="0.547"
+                app:layout_constraintStart_toEndOf="@+id/bAdd"
+                app:layout_constraintTop_toBottomOf="@+id/tvExemple" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

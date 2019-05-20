@@ -13,8 +13,8 @@ import android.widget.Toast;
 
 public class Info2Activity extends AppCompatActivity {
 
-    TextView tvExplications,tvTypeDechets;
-    Button back;
+    TextView tvExplications,tvTypeDechets,tvExemple;
+    Button back,add,delete;
     ImageView photo;
     String id;
     Bitmap b;
@@ -27,7 +27,10 @@ public class Info2Activity extends AppCompatActivity {
 
         tvExplications=findViewById(R.id.tvExplications);
         tvTypeDechets=findViewById(R.id.tvTypeDechet);
+        tvExemple=findViewById(R.id.tvExemple);
         back=findViewById(R.id.bRetour);
+        add=findViewById(R.id.bAdd);
+        delete=findViewById(R.id.bDelete);
         photo=findViewById(R.id.iv4);
 
         final DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
@@ -35,6 +38,8 @@ public class Info2Activity extends AppCompatActivity {
 
         Intent intent=getIntent();
         id=intent.getStringExtra("ID");
+
+
         //tvExplications.setText(databaseAccess.getExplication(id));
         //tvTypeDechets.setText(databaseAccess.getType(id));
 
