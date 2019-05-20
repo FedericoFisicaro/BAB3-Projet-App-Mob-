@@ -40,18 +40,61 @@
                 app:layout_constraintStart_toStartOf="@id/cl"
                 app:layout_constraintTop_toTopOf="@id/cl" />
 
+            <Button
+                android:id="@+id/btnPapier"
+                android:layout_width="155dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rectangle_plein_orange"
+                android:text="Papier-Carton"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <ListView
-                android:id="@+id/listView"
-                android:layout_width="305dp"
-                android:layout_height="549dp"
+                android:id="@+id/lvPapier"
+                android:layout_width="306dp"
+                android:layout_height="314dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="@id/cl"
                 app:layout_constraintHorizontal_bias="0.177"
                 app:layout_constraintStart_toStartOf="@id/cl"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/btnPapier" />
+
+            <Button
+                android:id="@+id/btnPMC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rectangle_plein_orange"
+                android:text="PMC"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.449"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lvPapier" />
+
+            <ListView
+                android:id="@+id/lvPMC"
+                android:layout_width="305dp"
+                android:layout_height="549dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="@id/cl"
+                app:layout_constraintHorizontal_bias="0.177"
+                app:layout_constraintStart_toStartOf="@id/cl"
+                app:layout_constraintTop_toBottomOf="@+id/btnPMC"/>
+
+
+
+
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 

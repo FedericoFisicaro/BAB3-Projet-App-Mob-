@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class Info2Activity extends AppCompatActivity {
 
-    TextView tvPoubelle,tvExplications,tvTypeDechets;
+    TextView tvExplications,tvTypeDechets;
     Button back;
     ImageView photo;
     int id;
@@ -25,7 +25,6 @@ public class Info2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info2);
 
-        tvPoubelle=findViewById(R.id.tvPoubelle);
         tvExplications=findViewById(R.id.tvExplications);
         tvTypeDechets=findViewById(R.id.tvTypeDechet);
         back=findViewById(R.id.bRetour);
@@ -37,8 +36,7 @@ public class Info2Activity extends AppCompatActivity {
         Intent intent=getIntent();
         id=Integer.valueOf(intent.getStringExtra("ID"));
         tvExplications.setText(databaseAccess.getExplication(id));
-        tvTypeDechets.setText(databaseAccess.getNom(id));
-        tvPoubelle.setText("Va dans la poubelle "+databaseAccess.getType(id));
+        tvTypeDechets.setText(databaseAccess.getType(id));
 
 
         c=databaseAccess.getPhoto(id);

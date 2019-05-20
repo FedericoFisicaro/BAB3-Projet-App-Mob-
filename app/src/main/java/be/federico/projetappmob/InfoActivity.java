@@ -45,7 +45,7 @@ public class InfoActivity extends AppCompatActivity {
         final DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
 
-        noms=databaseAccess.getNoms();
+        noms=databaseAccess.getTypes();
 
 
 

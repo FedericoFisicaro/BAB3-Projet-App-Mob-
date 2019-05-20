@@ -53,6 +53,27 @@ public class DatabaseAccess {
         return liste;
     }
 
+    public ArrayList<String> getTypes(){
+
+        c=db.rawQuery("select id,type from Dechets", new String[]{});
+        ArrayList<String> liste=new ArrayList<String>();
+
+
+        while(c.moveToNext()){
+            StringBuffer buffer= new StringBuffer();
+            String nom = c.getString(1);
+            buffer.append(c.getInt(0)+") " +nom);
+            liste.add(buffer.toString());
+        }
+        return liste;
+    }
+
+
+
+
+
+
+
     public String getExplication(int ide){
 
         c=db.rawQuery("select id,informations from Dechets where id ='"+ide+"'", new String[]{});
