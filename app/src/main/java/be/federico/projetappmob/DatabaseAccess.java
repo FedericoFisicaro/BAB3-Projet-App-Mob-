@@ -39,19 +39,17 @@ public class DatabaseAccess {
         }
     }
 
-    public ArrayList<String> getNoms(){
+    public String getNoms(){
 
         c=db.rawQuery("select id,nom from Dechets", new String[]{});
-        ArrayList<String> liste=new ArrayList<String>();
-
-
+        StringBuffer buffer= new StringBuffer();
+        buffer.append("Exemples : ");
         while(c.moveToNext()){
-            StringBuffer buffer= new StringBuffer();
+
             String nom = c.getString(1);
-            buffer.append(c.getInt(0)+") " +nom);
-            liste.add(buffer.toString());
+            buffer.append(nom+", ");
         }
-        return liste;
+        return buffer.toString();
     }
 
     public ArrayList<String> getTypes(){
@@ -70,18 +68,23 @@ public class DatabaseAccess {
 
     public String getExplication(String Type){
 
-        c=db.rawQuery("select type,informations from Poubelle where type ='"+Type+"'", new String[]{});
+        c=db.rawQuery("select type,information from Poubelle where type ='"+Type+"'", new String[]{});
         c.moveToFirst();
-        String liste=c.getString(1);
-        return liste;
+        return c.getString(1);
     }
 
-    public String getNom(int ide){
+    public String getNom(String id){
 
-        c=db.rawQuery("select id,nom from Dechets where id ='"+ide+"'", new String[]{});
-        c.moveToFirst();
-        String liste=c.getString(1);
-        return liste;
+        c=db.rawQuery("select nom from Dechets where type ='"+id+"'", new String[]{});
+        StringBuffer buffer= new StringBuffer();
+        buffer.append("Exemples : ");
+        while(c.moveToNext()){
+
+            String nom = c.getString(0);
+            buffer.append(nom+", ");
+        }
+        buffer.append("...");
+        return buffer.toString();
     }
 
     public String getType(String Type){
@@ -96,8 +99,7 @@ public class DatabaseAccess {
 
         c=db.rawQuery("select type,photo from Poubelle where type ='"+Type+"'", new String[]{});
         c.moveToFirst();
-        byte[] bitmapData = c.getBlob(1);
-        return bitmapData;
+        return c.getBlob(1);
     }
 
     public void Ajout(String Nom, String Type){
@@ -115,5 +117,9 @@ public class DatabaseAccess {
         db.execSQL("update Dechets set "+set+" = '"+element+"' where nom = '"+Nom+"' ",new  String []{});;
     }
 
+    public boolean Verification(String nom){
+        if(db.rawQuery("select nom from Dechets where nom ='"+nom+"'", new String[]{})!=null)return true;
+        else return false;
+    }
 
 }

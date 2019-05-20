@@ -58,7 +58,7 @@ public class InfoActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView txt=(TextView) view;
                 Intent intent=new Intent(InfoActivity.this,Info2Activity.class);
-                intent.putExtra("ID",txt.toString());
+                intent.putExtra("ID",txt.getText().toString());
                 startActivity(intent);
             }
         });
