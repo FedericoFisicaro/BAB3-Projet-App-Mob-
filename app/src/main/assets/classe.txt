@@ -1,0 +1,8 @@
+apple_core
+cardboard_sheet
+carton_milk
+drink_can
+food_can
+glass_bottle
+paper_sheet
+plastic_ bottle

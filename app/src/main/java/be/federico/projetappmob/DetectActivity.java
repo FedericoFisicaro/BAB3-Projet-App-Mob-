@@ -27,14 +27,27 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class DetectActivity extends AppCompatActivity {
 
     Button prendrePhoto,detect;
     ImageView photo;
     Uri pictureUri;
-
+    private String Résultat;
     private static final int PERMISSION_CODE = 1001;
+
+    private Classifier classifier;
+
+
+    private static final String MODEL_PATH = "model.tflite";
+    private static final boolean QUANT = false;
+    private static final String LABEL_PATH = "classe.txt";
+    private static final int INPUT_SIZE = 224;
+
+    private Executor executor = Executors.newSingleThreadExecutor();
 
 
     @Override
@@ -45,6 +58,7 @@ public class DetectActivity extends AppCompatActivity {
         detect=findViewById(R.id.BtnDetect);
         photo=findViewById(R.id.ImageView);
 
+        initTensorFlowAndLoadModel();
 
 
 
@@ -137,6 +151,14 @@ public class DetectActivity extends AppCompatActivity {
 
             photo.setImageBitmap(imagerotate);
 
+            image = Bitmap.createScaledBitmap(imagerotate, INPUT_SIZE, INPUT_SIZE, false);
+
+            final List<Classifier.Recognition> results = classifier.recognizeImage(image);
+
+            Résultat=results.toString();
+            Toast.makeText(getApplicationContext(),Résultat,Toast.LENGTH_LONG).show();
+
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             Toast.makeText(this, "Impossible ouvrir l'image", Toast.LENGTH_LONG).show();
@@ -185,4 +207,30 @@ public class DetectActivity extends AppCompatActivity {
         }
         return bitmap;
     }
+
+    private void initTensorFlowAndLoadModel() {
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    classifier = TensorFlowImageClassifier.create(getAssets(), MODEL_PATH, LABEL_PATH, INPUT_SIZE, QUANT);
+                    makeButtonVisible();
+                } catch (final Exception e) {
+                    throw new RuntimeException("Error initializing TensorFlow!", e);
+                }
+            }
+        });
+    }
+
+    private void makeButtonVisible() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                detect.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+
+
 }
