@@ -155,27 +155,9 @@
                 android:layout_marginBottom="11dp"
                 android:layout_toEndOf="@+id/tv5"
                 android:background="@drawable/rectangle_bleu"
-                app:srcCompat="@drawable/ecran_dacceuil"
+                app:srcCompat="@drawable/info1"
                 tools:layout_editor_absoluteX="175dp"
                 tools:layout_editor_absoluteY="175dp" />
-
-            <TextView
-                android:id="@+id/tv6"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_below="@+id/tv5"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="50dp"
-                android:gravity="center"
-                android:text="autre titre? ET ATTENTION A BIEN CHANGER LA PHOTO PRECEDENTE QUAND L'INTERFACE SERA FINI"
-                android:textColor="#055ddb"
-                android:textSize="20sp" />
 
         </RelativeLayout>
     </ScrollView>

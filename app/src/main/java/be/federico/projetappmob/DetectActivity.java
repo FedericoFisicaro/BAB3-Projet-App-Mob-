@@ -86,6 +86,7 @@ public class DetectActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(DetectActivity.this,ResultActivity.class);
+                intent.putExtra("Detected",Résultat);
                 startActivity(intent);
             }
         });
@@ -230,7 +231,4 @@ public class DetectActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
 }
