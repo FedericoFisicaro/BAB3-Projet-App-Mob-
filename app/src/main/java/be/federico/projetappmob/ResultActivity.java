@@ -69,7 +69,7 @@ public class ResultActivity extends AppCompatActivity {
 
 
 
-        Toast.makeText(getApplicationContext(),Résultat,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),Résultat,Toast.LENGTH_LONG).show();
 
 
 

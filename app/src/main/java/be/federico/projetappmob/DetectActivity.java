@@ -157,7 +157,7 @@ public class DetectActivity extends AppCompatActivity {
             final List<Classifier.Recognition> results = classifier.recognizeImage(image);
 
             Résultat=results.toString();
-            Toast.makeText(getApplicationContext(),Résultat,Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),Résultat,Toast.LENGTH_LONG).show();
 
 
         } catch (FileNotFoundException e) {
