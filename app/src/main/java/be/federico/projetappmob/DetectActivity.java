@@ -76,8 +76,6 @@ public class DetectActivity extends AppCompatActivity {
                 File imageFile = new File(pictureDirectory, pictureName);
                 pictureUri = Uri.fromFile(imageFile);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, pictureUri);  // 1er argument = je veux l'enregistrer 2eme= où l'enregistrer (soit public pour que qutres appli peuvent l'utiliser )
-
-
                 startActivityForResult(intent,0);
             }
         });
@@ -214,19 +212,9 @@ public class DetectActivity extends AppCompatActivity {
             public void run() {
                 try {
                     classifier = TensorFlowImageClassifier.create(getAssets(), MODEL_PATH, LABEL_PATH, INPUT_SIZE, QUANT);
-                    makeButtonVisible();
                 } catch (final Exception e) {
                     throw new RuntimeException("Error initializing TensorFlow!", e);
                 }
-            }
-        });
-    }
-
-    private void makeButtonVisible() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                detect.setVisibility(View.VISIBLE);
             }
         });
     }

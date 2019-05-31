@@ -33,7 +33,6 @@ public class InfoActivity extends AppCompatActivity {
     SQLiteDatabase db;
     ListView lv;
     ArrayList<String> noms;
-    ArrayList<String> test=new ArrayList<String>();
     String ok;
     StringBuilder sb = new StringBuilder();
     @Override
@@ -42,17 +41,14 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
         lv=findViewById(R.id.lvPapier);
+
         final DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
-
         noms=databaseAccess.getTypes();
-
-
-
-
-
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,noms);
         lv.setAdapter(adapter);
+
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

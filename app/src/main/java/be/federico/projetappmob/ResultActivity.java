@@ -69,7 +69,20 @@ public class ResultActivity extends AppCompatActivity {
 
 
 
-        //Toast.makeText(getApplicationContext(),Résultat,Toast.LENGTH_LONG).show();
+        /*Si les noms de la bdd étaient les même que ceux de l'algo, on pourrait le résumer en ca :
+
+
+        ArrayList<String> noms;=databaseAccess.getTypes();
+        Iterator<String> it = noms.iterator();
+
+        while (it.hasNext()) {
+            String s = it.next();
+                if(Résultat.contains(s)){
+                    TrashResult.setText(s);
+                    Info.setText(databaseAccess.getExplication(s))
+                }
+        }
+       */
 
 
 
