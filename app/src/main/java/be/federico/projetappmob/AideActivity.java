@@ -16,8 +16,7 @@ public class AideActivity extends AppCompatActivity {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AideActivity.this,MainActivity.class);
-                startActivity(intent);
+                AideActivity.this.finish();
             }
         });
     }
