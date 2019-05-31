@@ -37,16 +37,17 @@ public class Info2Activity extends AppCompatActivity {
         delete=findViewById(R.id.bDelete);
         photo=findViewById(R.id.iv4);
 
-        final DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
-        databaseAccess.open();
+
+
 
         Intent intent=getIntent();
         id=intent.getStringExtra("ID");
+        final DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
+        databaseAccess.open();
 
         tvExemple.setText(databaseAccess.getNom(id));
         tvExplications.setText(databaseAccess.getExplication(id));
         tvTypeDechets.setText(id);
-
         c=databaseAccess.getPhoto(id);
         Bitmap bitmap = BitmapFactory.decodeByteArray(c, 0, c.length);
         photo.setImageBitmap(bitmap);
