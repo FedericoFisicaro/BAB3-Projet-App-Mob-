@@ -21,7 +21,6 @@ public class Info2Activity extends AppCompatActivity {
     Button back,add,delete;
     ImageView photo;
     String id;
-    Bitmap b;
     byte[]c;
 
     @Override

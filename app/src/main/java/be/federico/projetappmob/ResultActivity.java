@@ -6,12 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
 
     Button back;
-    TextView ScanResult, TrashResult, Info;
+    TextView TrashResult, Info;
     String Résultat;
 
     @Override
@@ -67,8 +66,6 @@ public class ResultActivity extends AppCompatActivity {
         }
 
 
-
-
         /*Si les noms de la bdd étaient les même que ceux de l'algo, on pourrait le résumer en ca :
 
 
@@ -95,11 +92,6 @@ public class ResultActivity extends AppCompatActivity {
                 ResultActivity.this.finish();
             }
         });
-
-
-
-
-
 
     }
 }

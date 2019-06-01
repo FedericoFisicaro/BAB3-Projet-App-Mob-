@@ -4,11 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-
-import java.io.ByteArrayOutputStream;
-import java.sql.Blob;
 import java.util.ArrayList;
 
 public class DatabaseAccess {
@@ -16,7 +11,7 @@ public class DatabaseAccess {
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
     private static DatabaseAccess instance;
-    Cursor c= null,d=null;
+    Cursor c= null, d=null;
 
     private DatabaseAccess(Context context){
         this.openHelper=new DataBaseOpenHelper(context);
@@ -29,9 +24,13 @@ public class DatabaseAccess {
         return instance;
     }
 
+
+
     public void open(){
         this.db=openHelper.getWritableDatabase();
     }
+
+
 
     public void close(){
         if(db!=null){
@@ -39,18 +38,6 @@ public class DatabaseAccess {
         }
     }
 
-    public String getNoms(){
-
-        c=db.rawQuery("select id,nom from Dechets", new String[]{});
-        StringBuffer buffer= new StringBuffer();
-        buffer.append("Exemples : ");
-        while(c.moveToNext()){
-
-            String nom = c.getString(1);
-            buffer.append(nom+", ");
-        }
-        return buffer.toString();
-    }
 
     public ArrayList<String> getTypes(){
 
@@ -62,8 +49,6 @@ public class DatabaseAccess {
         }
         return liste;
     }
-
-
 
 
     public String getExplication(String Type){
@@ -87,13 +72,7 @@ public class DatabaseAccess {
         return buffer.toString();
     }
 
-    public String getType(String Type){
 
-        c=db.rawQuery("select type from Poubelle where type ='"+Type+"'", new String[]{});
-        c.moveToFirst();
-        String liste=c.getString(1);
-        return liste;
-    }
 
     public byte[] getPhoto(String Type){
 
@@ -113,9 +92,7 @@ public class DatabaseAccess {
         db.execSQL("delete from Dechets where nom ='"+Nom+"'", new String[]{} );
     }
 
-    public void Modif(String set, String element, String Nom){
-        db.execSQL("update Dechets set "+set+" = '"+element+"' where nom = '"+Nom+"' ",new  String []{});;
-    }
+
 
     public boolean Verification(String nom){
         c=db.rawQuery("select nom from Dechets where nom ='"+nom+"'", new String[]{});
