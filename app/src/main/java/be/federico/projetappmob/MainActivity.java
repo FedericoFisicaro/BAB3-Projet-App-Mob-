@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         trier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,DetectActivity.class);
+                Intent intent=new Intent
+                        (MainActivity.this,DetectActivity.class);
                 startActivity(intent);
             }
         });
