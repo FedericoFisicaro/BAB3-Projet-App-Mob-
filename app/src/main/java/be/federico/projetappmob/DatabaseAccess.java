@@ -4,11 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
-import java.io.ByteArrayOutputStream;
-import java.sql.Blob;
 import java.util.ArrayList;
 
 public class DatabaseAccess {

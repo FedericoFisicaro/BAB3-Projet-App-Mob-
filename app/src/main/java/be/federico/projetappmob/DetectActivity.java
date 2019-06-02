@@ -67,7 +67,6 @@ public class DetectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-                //ces 2 lignes de code jsp ce que ça fait mais sans ça ça marche pas
                 StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
                 StrictMode.setVmPolicy(builder.build());
 
@@ -102,7 +101,6 @@ public class DetectActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        //les commentaires qu'il y a je les ai copié du mec de la videó
 
         if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
 
