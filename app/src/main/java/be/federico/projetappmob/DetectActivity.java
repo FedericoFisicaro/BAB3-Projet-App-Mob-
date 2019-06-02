@@ -37,7 +37,6 @@ public class DetectActivity extends AppCompatActivity {
     Uri pictureUri;
     private String Résultat;
     private static final int PERMISSION_CODE = 1001;
-    boolean ok = false;
 
     private Classifier classifier;
 
